@@ -57,6 +57,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playback_stop(_ sender: Any) {
+        (sender as AnyObject).setTitle("再生", for: .normal)
         if self.timer != nil {
             self.timer.invalidate()   // タイマーを停止する
             self.timer = nil          // startTimer() の self.timer == nil で判断するために、 self.timer = nil としておく
@@ -65,6 +66,7 @@ class ViewController: UIViewController {
         } else {
             timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector:
                        #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+            (sender as AnyObject).setTitle("停止", for: .normal)
             // ボタンの操作を無効
             nextbutton.isEnabled = false
             backbutton.isEnabled = false
