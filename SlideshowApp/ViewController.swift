@@ -85,26 +85,31 @@ class ViewController: UIViewController {
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
        }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.timer.invalidate()   // タイマーを停止する
+                self.timer = nil          // startTimer() の self.timer == nil で判断するために、 self.timer = nil としておく
+                nextbutton.isEnabled = true
+                backbutton.isEnabled = true
         // segueから遷移先のResultViewControllerを取得する
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         // 遷移先のResultViewControllerで宣言しているx, yに値を代入して渡す
         resultViewController.imagename = images[imageIndex]
     }
-    class ViewController: UIViewController {
-        
-        @IBOutlet weak var `false`: UIButton!
-        @IBOutlet weak var button: UIButton!
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-
-           
-        }
-
-
-        @IBAction func pushButton(sender: UIButton) {
-            print("Push!")
-        }
-      }
+//    class ViewController: UIViewController {
+//
+//        @IBOutlet weak var `false`: UIButton!
+//        @IBOutlet weak var button: UIButton!
+//
+//        override func viewDidLoad() {
+//            super.viewDidLoad()
+//
+//
+//        }
+//
+//
+//        @IBAction func pushButton(sender: UIButton) {
+//            print("Push!")
+//        }
+//      }
     }
 
