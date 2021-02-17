@@ -91,6 +91,7 @@
                         <outlet property="backbutton" destination="noH-h7-X7P" id="wa1-Xv-0qs"/>
                         <outlet property="image1" destination="iIV-PJ-6B9" id="of1-XM-bqa"/>
                         <outlet property="nextbutton" destination="baY-uu-xbv" id="E6P-Pm-E4H"/>
+                        <outlet property="playstop" destination="B53-ah-7Du" id="F06-ej-tHE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

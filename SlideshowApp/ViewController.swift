@@ -84,11 +84,15 @@ class ViewController: UIViewController {
     }
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
        }
+    @IBOutlet weak var playstop: UIButton!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (self.timer != nil){
         self.timer.invalidate()   // タイマーを停止する
                 self.timer = nil          // startTimer() の self.timer == nil で判断するために、 self.timer = nil としておく
                 nextbutton.isEnabled = true
                 backbutton.isEnabled = true
+            playstop.setTitle("再生", for:.normal)
+        }
         // segueから遷移先のResultViewControllerを取得する
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         // 遷移先のResultViewControllerで宣言しているx, yに値を代入して渡す
